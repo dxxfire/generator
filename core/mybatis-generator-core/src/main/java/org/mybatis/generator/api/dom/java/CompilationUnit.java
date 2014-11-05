@@ -55,7 +55,7 @@ public interface CompilationUnit {
      * 
      * Note that in the Eclipse plugin, file comments will not be merged.
      * 
-     * @param commentLine
+     * @param commentLine commentLine
      */
     void addFileCommentLine(String commentLine);
 

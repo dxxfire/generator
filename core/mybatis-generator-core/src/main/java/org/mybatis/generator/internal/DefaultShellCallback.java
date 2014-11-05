@@ -27,65 +27,62 @@ import org.mybatis.generator.exception.ShellException;
  * @author Jeff Butler
  */
 public class DefaultShellCallback implements ShellCallback {
-    private boolean overwrite;
+  private boolean overwrite;
 
-    /**
-     *  
-     */
-    public DefaultShellCallback(boolean overwrite) {
-        super();
-        this.overwrite = overwrite;
+  public DefaultShellCallback(boolean overwrite) {
+    super();
+    this.overwrite = overwrite;
+  }
+
+  public File getDirectory(String targetProject, String targetPackage)
+      throws ShellException {
+    // targetProject is interpreted as a directory that must exist
+    //
+    // targetPackage is interpreted as a sub directory, but in package
+    // format (with dots instead of slashes). The sub directory will be
+    // created
+    // if it does not already exist
+
+    File project = new File(targetProject);
+    if (!project.isDirectory()) {
+      throw new ShellException(getString("Warning.9", //$NON-NLS-1$
+          targetProject));
     }
 
-    public File getDirectory(String targetProject, String targetPackage)
-            throws ShellException {
-        // targetProject is interpreted as a directory that must exist
-        //
-        // targetPackage is interpreted as a sub directory, but in package
-        // format (with dots instead of slashes). The sub directory will be
-        // created
-        // if it does not already exist
-
-        File project = new File(targetProject);
-        if (!project.isDirectory()) {
-            throw new ShellException(getString("Warning.9", //$NON-NLS-1$
-                    targetProject));
-        }
-
-        StringBuilder sb = new StringBuilder();
-        StringTokenizer st = new StringTokenizer(targetPackage, "."); //$NON-NLS-1$
-        while (st.hasMoreTokens()) {
-            sb.append(st.nextToken());
-            sb.append(File.separatorChar);
-        }
-
-        File directory = new File(project, sb.toString());
-        if (!directory.isDirectory()) {
-            boolean rc = directory.mkdirs();
-            if (!rc) {
-                throw new ShellException(getString("Warning.10", //$NON-NLS-1$
-                        directory.getAbsolutePath()));
-            }
-        }
-
-        return directory;
+    StringBuilder sb = new StringBuilder();
+    StringTokenizer st = new StringTokenizer(targetPackage, "."); //$NON-NLS-1$
+    while (st.hasMoreTokens()) {
+      sb.append(st.nextToken());
+      sb.append(File.separatorChar);
     }
 
-    public void refreshProject(String project) {
-        // nothing to do in the default shell callback
+    File directory = new File(project, sb.toString());
+    if (!directory.isDirectory()) {
+      boolean rc = directory.mkdirs();
+      if (!rc) {
+        throw new ShellException(getString("Warning.10", //$NON-NLS-1$
+            directory.getAbsolutePath()));
+      }
     }
 
-    public boolean isMergeSupported() {
-        return false;
-    }
+    return directory;
+  }
 
-    public boolean isOverwriteEnabled() {
-        return overwrite;
-    }
+  public void refreshProject(String project) {
+    // nothing to do in the default shell callback
+  }
 
-    public String mergeJavaFile(String newFileSource,
-            String existingFileFullPath, String[] javadocTags, String fileEncoding)
-            throws ShellException {
-        throw new UnsupportedOperationException();
-    }
+  public boolean isMergeSupported() {
+    return false;
+  }
+
+  public boolean isOverwriteEnabled() {
+    return overwrite;
+  }
+
+  public String mergeJavaFile(String newFileSource,
+      String existingFileFullPath, String[] javadocTags, String fileEncoding)
+      throws ShellException {
+    throw new UnsupportedOperationException();
+  }
 }

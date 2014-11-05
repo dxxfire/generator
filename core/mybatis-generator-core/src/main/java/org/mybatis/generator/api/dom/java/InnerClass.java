@@ -48,9 +48,6 @@ public class InnerClass extends JavaElement {
     
     private List<InitializationBlock> initializationBlocks;
 
-    /**
-     *  
-     */
     public InnerClass(FullyQualifiedJavaType type) {
         super();
         this.type = type;

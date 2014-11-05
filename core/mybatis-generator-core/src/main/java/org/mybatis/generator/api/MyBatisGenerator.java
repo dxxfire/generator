@@ -123,8 +123,8 @@ public class MyBatisGenerator {
      * @param callback
      *            an instance of the ProgressCallback interface, or
      *            <code>null</code> if you do not require progress information
-     * @throws SQLException
-     * @throws IOException
+     * @throws SQLException SQLException
+     * @throws IOException IOException
      * @throws InterruptedException
      *             if the method is canceled through the ProgressCallback
      */
@@ -145,9 +145,8 @@ public class MyBatisGenerator {
      *            a set of Strings containing context ids to run. Only the
      *            contexts with an id specified in this list will be run. If the
      *            list is null or empty, than all contexts are run.
-     * @throws InvalidConfigurationException
-     * @throws SQLException
-     * @throws IOException
+     * @throws SQLException SQLException
+     * @throws IOException IOException
      * @throws InterruptedException
      *             if the method is canceled through the ProgressCallback
      */
@@ -175,9 +174,8 @@ public class MyBatisGenerator {
      *            "bar", then the fully qualified table name is "foo.bar". If
      *            the Set is null or empty, then all tables in the configuration
      *            will be used for code generation.
-     * @throws InvalidConfigurationException
-     * @throws SQLException
-     * @throws IOException
+     * @throws SQLException SQLException
+     * @throws IOException IOException
      * @throws InterruptedException
      *             if the method is canceled through the ProgressCallback
      */
@@ -327,8 +325,9 @@ public class MyBatisGenerator {
     /**
      * Writes, or overwrites, the contents of the specified file
      * 
-     * @param file
-     * @param content
+     * @param file file
+     * @param content content
+     * @param fileEncoding fileEncoding
      */
     private void writeFile(File file, String content, String fileEncoding) throws IOException {
         FileOutputStream fos = new FileOutputStream(file, false);

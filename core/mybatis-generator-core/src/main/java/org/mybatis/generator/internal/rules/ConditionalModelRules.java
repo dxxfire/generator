@@ -28,49 +28,46 @@ import org.mybatis.generator.api.IntrospectedTable;
  */
 public class ConditionalModelRules extends BaseRules {
 
-    /**
-     * 
-     */
-    public ConditionalModelRules(IntrospectedTable introspectedTable) {
-        super(introspectedTable);
-    }
+  public ConditionalModelRules(IntrospectedTable introspectedTable) {
+    super(introspectedTable);
+  }
 
-    /**
-     * We generate a primary key if there is more than one primary key field.
-     * 
-     * @return true if the primary key should be generated
-     */
-    public boolean generatePrimaryKeyClass() {
-        return introspectedTable.getPrimaryKeyColumns().size() > 1;
-    }
+  /**
+   * We generate a primary key if there is more than one primary key field.
+   * 
+   * @return true if the primary key should be generated
+   */
+  public boolean generatePrimaryKeyClass() {
+    return introspectedTable.getPrimaryKeyColumns().size() > 1;
+  }
 
-    /**
-     * Generate a base record if there are any base columns, or if there is only
-     * one primary key coulmn (in which case we will not generate a primary key
-     * class), or if there is only one BLOB column (in which case we will not
-     * generate a record with BLOBs class).
-     * 
-     * @return true if the class should be generated
-     */
-    public boolean generateBaseRecordClass() {
-        return introspectedTable.getBaseColumns().size() > 0
-                || introspectedTable.getPrimaryKeyColumns().size() == 1
-                || (introspectedTable.getBLOBColumns().size() > 0 && !generateRecordWithBLOBsClass());
+  /**
+   * Generate a base record if there are any base columns, or if there is only
+   * one primary key coulmn (in which case we will not generate a primary key
+   * class), or if there is only one BLOB column (in which case we will not
+   * generate a record with BLOBs class).
+   * 
+   * @return true if the class should be generated
+   */
+  public boolean generateBaseRecordClass() {
+    return introspectedTable.getBaseColumns().size() > 0
+        || introspectedTable.getPrimaryKeyColumns().size() == 1
+        || (introspectedTable.getBLOBColumns().size() > 0 && !generateRecordWithBLOBsClass());
 
-    }
+  }
 
-    /**
-     * We generate a record with BLOBs class if there is more than one BLOB
-     * column. Do not generate a BLOBs class if any other super class would only
-     * contain one field
-     * 
-     * @return true if the record with BLOBs class should be generated
-     */
-    public boolean generateRecordWithBLOBsClass() {
-        int otherColumnCount = introspectedTable.getPrimaryKeyColumns().size()
-                + introspectedTable.getBaseColumns().size();
+  /**
+   * We generate a record with BLOBs class if there is more than one BLOB
+   * column. Do not generate a BLOBs class if any other super class would only
+   * contain one field
+   * 
+   * @return true if the record with BLOBs class should be generated
+   */
+  public boolean generateRecordWithBLOBsClass() {
+    int otherColumnCount = introspectedTable.getPrimaryKeyColumns().size()
+        + introspectedTable.getBaseColumns().size();
 
-        return otherColumnCount > 1
-                && introspectedTable.getBLOBColumns().size() > 1;
-    }
+    return otherColumnCount > 1
+        && introspectedTable.getBLOBColumns().size() > 1;
+  }
 }

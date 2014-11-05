@@ -34,9 +34,6 @@ public abstract class JavaElement {
 
     private List<String> annotations;
 
-    /**
-     *  
-     */
     public JavaElement() {
         super();
         javaDocLines = new ArrayList<String>();
@@ -46,7 +43,7 @@ public abstract class JavaElement {
     /**
      * Copy Constructor.
      * 
-     * @param original
+     * @param original original
      */
     public JavaElement(JavaElement original) {
         this();

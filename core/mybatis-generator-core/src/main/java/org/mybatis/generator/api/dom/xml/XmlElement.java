@@ -30,9 +30,6 @@ public class XmlElement extends Element {
 
     private String name;
 
-    /**
-     *  
-     */
     public XmlElement(String name) {
         super();
         attributes = new ArrayList<Attribute>();
@@ -44,7 +41,7 @@ public class XmlElement extends Element {
      * Copy constructor.  Not a truly deep copy, but close enough
      * for most purposes.
      * 
-     * @param original
+     * @param original original
      */
     public XmlElement(XmlElement original) {
         super();

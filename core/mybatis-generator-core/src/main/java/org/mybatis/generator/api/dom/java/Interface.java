@@ -44,9 +44,6 @@ public class Interface extends JavaElement implements CompilationUnit {
 
     private List<String> fileCommentLines;
 
-    /**
-     *  
-     */
     public Interface(FullyQualifiedJavaType type) {
         super();
         this.type = type;

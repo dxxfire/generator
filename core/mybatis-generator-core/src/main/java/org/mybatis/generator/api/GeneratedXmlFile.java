@@ -21,60 +21,65 @@ import org.mybatis.generator.api.dom.xml.Document;
  * @author Jeff Butler
  */
 public class GeneratedXmlFile extends GeneratedFile {
-    private Document document;
+  private Document document;
 
-    private String fileName;
+  private String fileName;
 
-    private String targetPackage;
+  private String targetPackage;
 
-    private boolean isMergeable;
-    
-    private XmlFormatter xmlFormatter;
+  private boolean isMergeable;
 
-    /**
-     * 
-     * @param document
-     * @param fileName
-     * @param targetPackage
-     * @param targetProject
-     * @param isMergeable
-     *            true if the file can be merged by the built in XML file
-     *            merger.
-     */
-    public GeneratedXmlFile(Document document, String fileName,
-            String targetPackage, String targetProject, boolean isMergeable,
-            XmlFormatter xmlFormatter) {
-        super(targetProject);
-        this.document = document;
-        this.fileName = fileName;
-        this.targetPackage = targetPackage;
-        this.isMergeable = isMergeable;
-        this.xmlFormatter = xmlFormatter;
-    }
+  private XmlFormatter xmlFormatter;
 
-    @Override
-    public String getFormattedContent() {
-        return xmlFormatter.getFormattedContent(document);
-    }
+  /**
+   * 
+   * @param document
+   *          document
+   * @param fileName
+   *          fileName
+   * @param targetPackage
+   *          targetPackage
+   * @param targetProject
+   *          targetProject
+   * @param isMergeable
+   *          true if the file can be merged by the built in XML file merger.
+   * @param xmlFormatter
+   *          xmlFormatter
+   */
+  public GeneratedXmlFile(Document document, String fileName,
+      String targetPackage, String targetProject, boolean isMergeable,
+      XmlFormatter xmlFormatter) {
+    super(targetProject);
+    this.document = document;
+    this.fileName = fileName;
+    this.targetPackage = targetPackage;
+    this.isMergeable = isMergeable;
+    this.xmlFormatter = xmlFormatter;
+  }
 
-    /**
-     * @return Returns the fileName.
-     */
-    @Override
-    public String getFileName() {
-        return fileName;
-    }
+  @Override
+  public String getFormattedContent() {
+    return xmlFormatter.getFormattedContent(document);
+  }
 
-    /**
-     * @return Returns the targetPackage.
-     */
-    @Override
-    public String getTargetPackage() {
-        return targetPackage;
-    }
+  /**
+   * @return Returns the fileName.
+   */
+  @Override
+  public String getFileName() {
+    return fileName;
+  }
 
-    @Override
-    public boolean isMergeable() {
-        return isMergeable;
-    }
+  /**
+   * @return Returns the targetPackage.
+   */
+  @Override
+  public String getTargetPackage() {
+    return targetPackage;
+  }
+
+  @Override
+  public boolean isMergeable() {
+    return isMergeable;
+  }
 }

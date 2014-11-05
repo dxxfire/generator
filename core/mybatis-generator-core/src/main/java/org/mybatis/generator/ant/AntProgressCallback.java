@@ -31,9 +31,6 @@ public class AntProgressCallback extends NullProgressCallback {
     private Task task;
     private boolean verbose;
 
-    /**
-     * 
-     */
     public AntProgressCallback(Task task, boolean verbose) {
         super();
         this.task = task;

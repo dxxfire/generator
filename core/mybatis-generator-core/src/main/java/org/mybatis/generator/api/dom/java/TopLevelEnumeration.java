@@ -38,7 +38,7 @@ public class TopLevelEnumeration extends InnerEnum implements CompilationUnit {
     private List<String> fileCommentLines;
 
     /**
-     * @param type
+     * @param type type
      */
     public TopLevelEnumeration(FullyQualifiedJavaType type) {
         super(type);

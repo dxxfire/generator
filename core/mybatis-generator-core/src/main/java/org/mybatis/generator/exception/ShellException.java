@@ -22,34 +22,35 @@ package org.mybatis.generator.exception;
  * @author Jeff Butler
  */
 public class ShellException extends Exception {
-    static final long serialVersionUID = -2026841561754434544L;
+  static final long serialVersionUID = -2026841561754434544L;
 
-    /**
-     * 
-     */
-    public ShellException() {
-        super();
-    }
+  public ShellException() {
+    super();
+  }
 
-    /**
-     * @param arg0
-     */
-    public ShellException(String arg0) {
-        super(arg0);
-    }
+  /**
+   * @param arg0
+   *          arg0
+   */
+  public ShellException(String arg0) {
+    super(arg0);
+  }
 
-    /**
-     * @param arg0
-     * @param arg1
-     */
-    public ShellException(String arg0, Throwable arg1) {
-        super(arg0, arg1);
-    }
+  /**
+   * @param arg0
+   *          arg0
+   * @param arg1
+   *          arg1
+   */
+  public ShellException(String arg0, Throwable arg1) {
+    super(arg0, arg1);
+  }
 
-    /**
-     * @param arg0
-     */
-    public ShellException(Throwable arg0) {
-        super(arg0);
-    }
+  /**
+   * @param arg0
+   *          arg0
+   */
+  public ShellException(Throwable arg0) {
+    super(arg0);
+  }
 }

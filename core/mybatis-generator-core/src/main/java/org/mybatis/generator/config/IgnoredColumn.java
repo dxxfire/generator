@@ -37,9 +37,6 @@ public class IgnoredColumn {
 
     private String configuredDelimitedColumnName;
 
-    /**
-     * 
-     */
     public IgnoredColumn(String columnName) {
         super();
         this.columnName = columnName;

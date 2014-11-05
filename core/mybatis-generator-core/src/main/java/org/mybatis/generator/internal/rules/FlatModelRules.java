@@ -27,37 +27,34 @@ import org.mybatis.generator.api.IntrospectedTable;
  */
 public class FlatModelRules extends BaseRules {
 
-    /**
-     * 
-     */
-    public FlatModelRules(IntrospectedTable introspectedTable) {
-        super(introspectedTable);
-    }
+  public FlatModelRules(IntrospectedTable introspectedTable) {
+    super(introspectedTable);
+  }
 
-    /**
-     * We never generate a primary key in the flat model.
-     * 
-     * @return true if the primary key should be generated
-     */
-    public boolean generatePrimaryKeyClass() {
-        return false;
-    }
+  /**
+   * We never generate a primary key in the flat model.
+   * 
+   * @return true if the primary key should be generated
+   */
+  public boolean generatePrimaryKeyClass() {
+    return false;
+  }
 
-    /**
-     * We always generate a base record in the flat model.
-     * 
-     * @return true if the class should be generated
-     */
-    public boolean generateBaseRecordClass() {
-        return true;
-    }
+  /**
+   * We always generate a base record in the flat model.
+   * 
+   * @return true if the class should be generated
+   */
+  public boolean generateBaseRecordClass() {
+    return true;
+  }
 
-    /**
-     * We never generate a record with BLOBs class in the flat model.
-     * 
-     * @return true if the record with BLOBs class should be generated
-     */
-    public boolean generateRecordWithBLOBsClass() {
-        return false;
-    }
+  /**
+   * We never generate a record with BLOBs class in the flat model.
+   * 
+   * @return true if the record with BLOBs class should be generated
+   */
+  public boolean generateRecordWithBLOBsClass() {
+    return false;
+  }
 }

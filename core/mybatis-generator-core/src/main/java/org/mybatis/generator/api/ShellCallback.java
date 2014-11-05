@@ -48,8 +48,8 @@ public interface ShellCallback {
      * The default shell callback interprets both values as directories and
      * simply concatenates the two values to generate the default directory.
      * 
-     * @param targetProject
-     * @param targetPackage
+     * @param targetProject targetProject
+     * @param targetPackage targetPackage
      * @return the directory (must exist)
      * @throws ShellException
      *             if the project/package cannot be resolved into a directory on

@@ -27,9 +27,6 @@ public class Document {
 
     private XmlElement rootElement;
 
-    /**
-     *  
-     */
     public Document(String publicId, String systemId) {
         super();
         this.publicId = publicId;

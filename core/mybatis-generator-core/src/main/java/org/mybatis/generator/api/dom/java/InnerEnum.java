@@ -46,9 +46,6 @@ public class InnerEnum extends JavaElement {
 
     private List<String> enumConstants;
 
-    /**
-     * 
-     */
     public InnerEnum(FullyQualifiedJavaType type) {
         super();
         this.type = type;

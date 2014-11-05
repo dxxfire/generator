@@ -24,9 +24,6 @@ package org.mybatis.generator.api;
 public abstract class GeneratedFile {
     protected String targetProject;
 
-    /**
-	 *  
-	 */
     public GeneratedFile(String targetProject) {
         super();
         this.targetProject = targetProject;

@@ -936,8 +936,8 @@ public abstract class IntrospectedTable {
      * This method is called after all the setX methods, but before
      * getNumberOfSubtasks(), getGeneratedJavaFiles, and getGeneratedXmlFiles.
      * 
-     * @param warnings
-     * @param progressCallback
+     * @param warnings warnings
+     * @param progressCallback progressCallback
      */
     public abstract void calculateGenerators(List<String> warnings,
             ProgressCallback progressCallback);
@@ -980,7 +980,7 @@ public abstract class IntrospectedTable {
      * This method exists to give plugins the opportunity to replace the
      * calculated rules if necessary.
      * 
-     * @param rules
+     * @param rules rules
      */
     public void setRules(Rules rules) {
         this.rules = rules;
@@ -1140,7 +1140,7 @@ public abstract class IntrospectedTable {
      * so it should not rely on database introspection.  This method
      * simply tells the validator if an XML configuration is normally
      * required for this implementation.
-     * @return
+     * @return boolean
      */
     public abstract boolean requiresXMLGenerator();
 

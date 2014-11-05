@@ -41,9 +41,6 @@ public class GeneratedKey {
 
     private String type;
 
-    /**
-     * 
-     */
     public GeneratedKey(String column, String configuredSqlStatement,
             boolean isIdentity, String type) {
         super();
@@ -79,10 +76,10 @@ public class GeneratedKey {
 
     /**
      * This method is used by the iBATIS2 generators to know
-     * if the XML <selectKey> element should be placed
+     * if the XML "selectKey" element should be placed
      * before the insert SQL statement.
      * 
-     * @return
+     * @return boolean
      */
     public boolean isPlacedBeforeInsertInIbatis2() {
         boolean rc;

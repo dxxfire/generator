@@ -23,9 +23,6 @@ import org.mybatis.generator.api.dom.OutputUtilities;
 public class TextElement extends Element {
     private String content;
 
-    /**
-     *  
-     */
     public TextElement(String content) {
         super();
         this.content = content;

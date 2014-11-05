@@ -84,8 +84,8 @@ public class OutputUtilities {
     /**
      * returns a unique set of "import xxx;" Strings for the set of types
      * 
-     * @param importedTypes
-     * @return
+     * @param importedTypes importedTypes
+     * @return Set(String)
      */
     public static Set<String> calculateImports(
             Set<FullyQualifiedJavaType> importedTypes) {

@@ -56,7 +56,7 @@ public interface JavaTypeResolver {
      * displayed to the user. The concept of a warning is that code generation
      * can continue, but that the results may not be what is expected.
      * 
-     * @param warnings
+     * @param warnings warnings
      */
     void setWarnings(List<String> warnings);
 

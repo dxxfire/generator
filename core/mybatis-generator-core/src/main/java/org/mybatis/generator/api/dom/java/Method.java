@@ -43,9 +43,6 @@ public class Method extends JavaElement {
     
     private boolean isNative;
 
-    /**
-     *  
-     */
     public Method() {
         // use a default name to avoid malformed code
         this("bar"); //$NON-NLS-1$
@@ -63,7 +60,7 @@ public class Method extends JavaElement {
      * Copy constructor.  Not a truly deep copy, but close enough
      * for most purposes.
      * 
-     * @param original
+     * @param original original
      */
     public Method(Method original) {
         super(original);
